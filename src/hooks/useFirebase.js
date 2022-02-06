@@ -1,5 +1,8 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
+import initializeAuthentication from "../components/Firebase/firebase.init"
+
+initializeAuthentication()
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
@@ -30,6 +33,7 @@ const useFirebase = () => {
             });
     }
 
+    //its called observer (user auth state changed or not) 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
