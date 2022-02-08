@@ -20,7 +20,6 @@ const Header = () => {
                         :
                         <NavLink to="/login">Login</NavLink>
                 }
-
             </nav>
         </div >
     );
