@@ -13,14 +13,7 @@ const useFirebase = () => {
     const auth = getAuth();
 
     const signInUsingGoogle = () => {
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                console.log(result.user);
-                setUser(result.user);
-            })
-            .catch(error => {
-                setError(error.message, error.code);
-            })
+        return signInWithPopup(auth, googleProvider)
     }
 
     const logout = () => {
